@@ -1,0 +1,194 @@
+/* CSS cho container chứa chi tiết sản phẩm */
+.detail-container {
+    background-color: #fff;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+  }
+  
+  .detail-content {
+    text-align: center;
+    padding: 20px;
+  }
+  
+  .detail-content h2 {
+    color: #333;
+    font-size: 24px;
+  }
+  
+  .detail-content img {
+    max-width: 100%;
+    margin: 20px 0;
+    border-radius: 5px;
+  }
+  
+  .detail-content p {
+    font-size: 18px;
+    color: #777;
+  }
+  
+  /* CSS cho biểu mẫu thông tin nhận xe */
+  #pickup-info-form {
+    background-color: #fff;
+    padding: 40px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  
+  #pickup-info-form form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .form-group {
+    margin-bottom: 20px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .form-group label {
+    font-weight: bold;
+    margin-bottom: 5px;
+    font-size: 18px;
+    color: #333;
+  }
+  
+  .form-group input[type="text"],
+  .form-group input[type="date"],
+  .form-group input[type="time"],
+  .form-group input[type="email"],
+  .form-group select,
+  .form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    color: #333;
+  }
+  
+  .form-group button {
+    background-color: #ff5733;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+    transition: background-color 0.3s;
+  }
+  
+  .form-group button:hover {
+    background-color: #ff2600;
+  }
+  
+  .button {
+    text-align: center;
+  }
+  
+  .location h4 {
+    font-size: 20px;
+    font-weight: bold;
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 10px;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 5px;
+    width: 80%;
+    color: #f2f2f2;
+  }
+  /* CSS cho container chứa chi tiết sản phẩm */
+.product-details {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 20px;
+    margin: 20px 0;
+  }
+  
+  .product-details h1 {
+    font-size: 28px;
+    color: #333;
+    margin: 10px 0;
+  }
+  
+  .product-details p {
+    font-size: 18px;
+    color: #777;
+    margin: 10px 0;
+  }
+  
+  .product-details img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+    margin: 20px 0;
+  }
+  
+  .product-details img,
+  .product-details h1,
+  .product-details p {
+    text-align: center;
+  }
+  
+  /* CSS cho mô tả sản phẩm */
+  #product-description {
+    font-size: 16px;
+  }
+  
+  /* CSS cho container của nút "Thuê Ngay" */
+  #pickup-info-form {
+    background-color: #fff;
+    padding: 40px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  .product-details {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 20px;
+    margin: 20px 0;
+  }
+  
+  .product-details h1 {
+    font-size: 28px;
+    color: #333;
+    margin: 10px 0;
+  }
+  
+  .product-details p {
+    font-size: 18px;
+    color: #777;
+    margin: 10px 0;
+  }
+  
+  .product-details img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+    margin: 20px 0;
+  }
+  
+  .product-details img,
+  .product-details h1,
+  .product-details p {
+    text-align: center;
+  }
+  
+  #product-description {
+    font-size: 16px;
+  }
+  

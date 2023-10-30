@@ -1,0 +1,85 @@
+
+/* Định dạng toàn bộ trang */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+}
+
+/* Định dạng tiêu đề */
+h1 {
+  background-color: #8f5fe8;
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+
+/* Định dạng nút và ô tìm kiếm */
+button {
+  background-color: #8f5fe8;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #6f48db;
+}
+
+input[type="text"] {
+  width: 100%;
+  padding: 10px;
+  margin: 5px 0;
+  box-sizing: border-box;
+}
+
+/* Định dạng bảng */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: white;
+}
+
+th, td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+th {
+  background-color: #8f5fe8;
+  color: white;
+}
+
+/* Định dạng form thêm xe */
+#addCarForm {
+  display: none;
+  padding: 20px;
+  background-color: white;
+  border: 1px solid #ddd;
+  margin: 20px 0;
+}
+
+/* Định dạng chân trang */
+footer {
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 10px;
+}
+header {
+  margin-bottom: 20px; /* Thay đổi giá trị theo ý muốn */
+}
+
+footer {
+  margin-top: 20px; /* Thay đổi giá trị theo ý muốn */
+}
+#user-greeting {
+  margin-left: 10px ;
+  margin-right: 20px;
+  font-weight: bold; /* In đậm chữ */
+  font-size: 16px; /* Cỡ chữ */
+  color: #0077FF; /* Màu chữ (ví dụ: màu xanh) */
+}

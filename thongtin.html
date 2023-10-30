@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./assets/css/nicepage.css" media="screen">
+  <link rel="stylesheet" href="./assets/css/price-list.css" media="screen">
+  <script class="u-script" type="text/javascript" src="./assets/js/jquery.js" defer=""></script>
+  <script class="u-script" type="text/javascript" src="./assets/js/nicepage.js" defer=""></script>
+  <meta name="generator" content="Nicepage 5.19.3, nicepage.com">
+  <link id="u-theme-google-font" rel="stylesheet"
+    href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i">
+  <link id="u-page-google-font" rel="stylesheet"
+    href="https://fonts.googleapis.com/css?family=Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i">
+
+  <script type="application/ld+json">{
+		"@context": "http://schema.org",
+		"@type": "Organization",
+		"name": "",
+		"logo": "https://pixabay.com/get/g912608e8e6096e020b5a5259bd4fe20362236b88308a480095ee267ba384b80c913b0d64fad0f1065723c644494f4378371fb102902cc74ede49c77e2470416f_1280.png"
+}</script>
+  <meta name="theme-color" content="#478ac9">
+  <meta property="og:title" content="Home">
+  <meta property="og:type" content="website">
+  <meta data-intl-tel-input-cdn-path="intlTelInput/">
+  <style>
+    .detail-container {
+      background-color: #fff;
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .detail-content {
+      text-align: center;
+      padding: 20px;
+    }
+
+    .detail-content h2 {
+      color: #333;
+      font-size: 24px;
+    }
+
+    .detail-content img {
+      max-width: 100%;
+      margin: 20px 0;
+    }
+
+    .detail-content p {
+      font-size: 18px;
+      color: #777;
+    }
+
+    /* CSS cho biểu mẫu thông tin nhận xe */
+    #pickup-info-form {
+      background-color: #fff;
+      padding: 40px;
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    #pickup-info-form .container {
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    #pickup-info-form form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+      width: 100%;
+    }
+
+    .form-group label {
+      font-weight: bold;
+    }
+
+    .form-group input[type="text"],
+    .form-group input[type="date"],
+    .form-group input[type="time"],
+    .form-group input[type="email"],
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 16px;
+    }
+
+    .form-group button {
+      background-color: #ff5733;
+      color: #fff;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 18px;
+      transition: background-color 0.3s;
+    }
+
+    .form-group button:hover {
+      background-color: #ff2600;
+    }
+
+    .button {
+      text-align: center;
+    }
+
+    .location h4 {
+      font-size: 20px;
+      font-weight: bold;
+      margin: 0;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      padding: 10px;
+      background-color: rgba(255, 255, 255, 0.8);
+      border-radius: 5px;
+      width: 80%;
+      color: #f2f2f2;
+    }
+
+    */
+  </style>
+  <title>Thông Tin Xe Chi Tiết</title>
+</head>
+
+<body>
+  <header class="u-clearfix u-header u-header" id="sec-5344">
+    <div class="u-clearfix u-sheet u-sheet-1">
+      <a href="" class="u-align-left u-image u-logo u-image-1" data-image-width="1280" data-image-height="1280">
+        <img src="./assets/images/logo-xe.png" class="u-logo-image u-logo-image-1">
+      </a>
+      <h3 class="u-text u-text-black u-text-1">APPL<span style="font-weight: 700;"></span>ER4CAR
+      </h3>
+      <nav class="u-align-right u-menu u-menu-one-level u-offcanvas u-menu-1" data-position="">
+        <div class="menu-collapse"
+          style="font-size: 1rem; letter-spacing: 0px; font-weight: 700; text-transform: uppercase;">
+          <a class="u-button-style u-custom-active-border-color u-custom-active-color u-custom-border u-custom-border-color u-custom-border-radius u-custom-borders u-custom-color u-custom-hover-border-color u-custom-hover-color u-custom-left-right-menu-spacing u-custom-padding-bottom u-custom-text-active-color u-custom-text-color u-custom-text-decoration u-custom-text-hover-color u-custom-text-shadow u-custom-text-shadow-blur u-custom-text-shadow-color u-custom-text-shadow-transparency u-custom-text-shadow-x u-custom-text-shadow-y u-custom-top-bottom-menu-spacing u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base"
+            href="#">
+            <svg class="u-svg-link" viewBox="0 0 24 24">
+              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#menu-hamburger"></use>
+            </svg>
+            <svg class="u-svg-content" version="1.1" id="menu-hamburger" viewBox="0 0 16 16" x="0px" y="0px"
+              xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg">
+              <g>
+                <rect y="1" width="16" height="2"></rect>
+                <rect y="7" width="16" height="2"></rect>
+                <rect y="13" width="16" height="2"></rect>
+              </g>
+            </svg>
+          </a>
+        </div>
+        <div class="u-custom-menu u-nav-container">
+          <span id="user-greeting"></span>
+          <ul class="u-nav u-spacing-30 u-unstyled u-nav-1">
+            <li class="u-nav-item"><a
+                class="u-border-2 u-border-active-palette-1-base u-border-hover-palette-1-light-1 u-border-no-left u-border-no-right u-border-no-top u-button-style u-nav-link u-text-active-grey-90 u-text-grey-90 u-text-hover-grey-90"
+                href="index.html" style="padding: 10px 0px;">Trang Chủ </a>
+            </li>
+            <li class="u-nav-item"><a
+                class="u-border-2 u-border-active-palette-1-base u-border-hover-palette-1-light-1 u-border-no-left u-border-no-right u-border-no-top u-button-style u-nav-link u-text-active-grey-90 u-text-grey-90 u-text-hover-grey-90"
+                href="Dangtin.html" style="padding: 10px 0px;">Đăng Tin </a>
+            </li>
+            <li class="u-nav-item"><a
+                class="u-border-2 u-border-active-palette-1-base u-border-hover-palette-1-light-1 u-border-no-left u-border-no-right u-border-no-top u-button-style u-nav-link u-text-active-grey-90 u-text-grey-90 u-text-hover-grey-90"
+                href="ConTact.html" style="padding: 10px 0px;">Liên Hệ </a>
+            </li>
+            <li class="u-nav-item"><a
+                class="u-border-2 u-border-active-palette-1-base u-border-hover-palette-1-light-1 u-border-no-left u-border-no-right u-border-no-top u-button-style u-nav-link u-text-active-grey-90 u-text-grey-90 u-text-hover-grey-90"
+                href="price-list.html" style="padding: 10px 0px;">Bảng Giá </a>
+            </li>
+            <li class="u-nav-item"><a
+                class="u-border-2 u-border-active-palette-1-base u-border-hover-palette-1-light-1 u-border-no-left u-border-no-right u-border-no-top u-button-style u-nav-link u-text-active-grey-90 u-text-grey-90 u-text-hover-grey-90"
+                href="Sign-Up.html" style="padding: 10px 0px;">Đăng Nhập </a>
+            </li>
+          </ul>
+        </div>
+        <div class="u-custom-menu u-nav-container-collapse">
+          <div class="u-black u-container-style u-inner-container-layout u-opacity u-opacity-95 u-sidenav">
+            <div class="u-inner-container-layout u-sidenav-overflow">
+              <div class="u-menu-close"></div>
+              <ul class="u-align-center u-nav u-popupmenu-items u-unstyled u-nav-2">
+                <li class="u-nav-item"><a class="u-button-style u-nav-link" href="index.html">Trang Chủ </a>
+                </li>
+                <li class="u-nav-item"><a class="u-button-style u-nav-link" href="Dangtin.html">Đăng Tin </a>
+                </li>
+                <li class="u-nav-item"><a class="u-button-style u-nav-link" href="Contact.html">Liên Hệ </a>
+                </li>
+                <li class="u-nav-item"><a class="u-button-style u-nav-link" href="price-list.html">Bảng Giá </a>
+                </li>
+                <li class="u-nav-item"><a class="u-button-style u-nav-link" href="Sign-Up.html">Đăng Nhập </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="u-black u-menu-overlay u-opacity u-opacity-70"></div>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+
+
+  <div class="detail-container">
+    <div class="detail-content">
+      <h2>Thông Tin Xe Chi Tiết</h2>
+      <div id="xeDetail">
+
+      </div>
+    </div>
+  </div>
+  <section id="pickup-info-form">
+    <div class="container">
+      <form id="pickup-form" action="https://apple4car.onrender.com/thongtin" method="post">
+
+        <div class="form-group">
+          <label for="HoTen">Họ và Tên:</label>
+          <input type="text" id="HoTen" name="HoTen" required>
+        </div>
+        <div class="form-group">
+          <label for="Email">Email:</label>
+          <input type="Email" id="Email" name="Email" required>
+        </div>
+        <div class="form-group">
+          <label for="DiemNhan">Địa Điểm Nhận Xe:</label>
+          <select id="DiemNhan" name="DiemNhan" required>
+            <option value="Hà Nội">Hà Nội</option>
+            <option value="Hà Giang">Hà Giang</option>
+           
+            <option value="Hồ Chí Minh">Hồ Chí Minh</option>
+          </select>
+      
+          <div class="form-group">
+            <label for="NgayNhan">Ngày Nhận Xe:</label>
+            <input type="date" id="NgayNhan" name="NgayNhan" required>
+          </div>
+          <div class="form-group">
+            <label for="DiemTra">Điểm Trả Xe:</label>
+            <input type="text" id="DiemTra" name="DiemTra" required>
+          </div>
+          <div class="form-group">
+            <label for="NgayTra">Ngày Trả Xe:</label>
+            <input type="date" id="NgayTra" name="NgayTra" required>
+          </div>
+        </div>
+        <div class="form-group button">
+          <button type="submit">Thuê Ngay</button>
+        </div>
+      </form>
+    </div>
+  </section>
+  <script>
+    document.addEventListener("DOMContentLoaded", async function () {
+      const xeDetail = document.getElementById("xeDetail");
+
+      // Lấy ID xe từ URL
+      const urlParams = new URLSearchParams(window.location.search);
+      const MaXe = parseInt(urlParams.get("MaXe")); // Parse MaXe as an integer
+      const MaLoaiXe = urlParams.get("MaLoaiXe");
+
+      if (MaXe) {
+        try {
+          // Tải thông tin xe từ API
+          const response = await fetch(`https://apple4car.onrender.com/getxe/${MaXe}`);
+          if (response.status === 200) {
+            const data = await response.json();
+
+            // Tạo các phần tử để hiển thị thông tin xe
+            const img = document.createElement("img");
+            img.src = data.Anh;
+            img.alt = data.TenXe;
+
+            const h2 = document.createElement("h2");
+            h2.textContent = data.TenXe;
+
+            const bienSoXe = document.createElement("p");
+            bienSoXe.textContent = `Biển số xe: ${data.BienSo}`;
+
+            const ghiChu = document.createElement("p");
+            ghiChu.textContent = `Trạng Thái: ${data.GhiChu}`;
+
+            // Hiển thị thông tin về xe
+            xeDetail.appendChild(img);
+            xeDetail.appendChild(h2);
+            xeDetail.appendChild(bienSoXe);
+            xeDetail.appendChild(ghiChu);
+
+            // Tải giá thuê xe từ API thứ hai
+            const priceResponse = await fetch("https://apple4car.onrender.com/thongtinxe");
+            if (priceResponse.status === 200) {
+              const priceData = await priceResponse.json();
+              const rentalPrice = priceData.find(item => item.MaXe === MaXe);
+              if (rentalPrice) {
+                const giaThue = document.createElement("p");
+                giaThue.textContent = `Giá thuê: ${rentalPrice.Gia.toLocaleString('vi-VN')} VNĐ/Ngày`;
+                xeDetail.appendChild(giaThue);
+                {
+                  const giaThuePerDay = rentalPrice.Gia; // Lấy giá thuê mỗi ngày từ API
+                  const NgayNhanInput = document.getElementById("NgayNhan");
+                  const NgayTraInput = document.getElementById("NgayTra");
+
+                  NgayNhanInput.addEventListener("input", updateTotalPrice);
+                  NgayTraInput.addEventListener("input", updateTotalPrice);
+
+                  async function updateTotalPrice() {
+                    const ngayNhan = new Date(NgayNhanInput.value);
+                    const ngayTra = new Date(NgayTraInput.value);
+                    // Tạo một div để chứa tổng giá thuê
+                    const totalPriceContainer = document.createElement("div");
+                    totalPriceContainer.id = "totalPriceContainer";
+
+                    if (!isNaN(ngayNhan) && !isNaN(ngayTra) && ngayTra >= ngayNhan) {
+                      const soNgayThue = Math.ceil((ngayTra - ngayNhan) / (1000 * 60 * 60 * 24));
+
+                      if (!isNaN(giaThuePerDay) && !isNaN(soNgayThue)) {
+                        const totalPrice = giaThuePerDay * soNgayThue;
+
+                        // Hiển thị tổng giá thuê
+                        const totalPriceElement = document.createElement("p");
+                        totalPriceContainer.innerHTML = `<p>Tổng Giá Thuê: ${totalPrice.toLocaleString('vi-VN')} VNĐ</p>`;
+                        // Lấy phần tử biểu mẫu
+                        const pickupForm = document.getElementById("pickup-form");
+
+                        // Chèn phần tử tổng giá thuê vào trước nút "Thuê Ngay"
+                        pickupForm.insertBefore(totalPriceContainer, pickupForm.querySelector(".button"));
+
+                        // Xóa tổng giá thuê cũ (nếu có) và thêm giá trị mới
+                        const oldTotalPrice = document.getElementById("totalPrice");
+                        if (oldTotalPrice) {
+                          oldTotalPrice.remove();
+                        }
+                        xeDetail.appendChild(totalPriceElement);
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          } else {
+            throw new Error("Lỗi Tải Dữ Liệu Xe Chi Tiết");
+          }
+        } catch (error) {
+          console.log("Lỗi Tải Dữ Liệu Xe Chi Tiết: " + error);
+        }
+      }
+
+    });
+
+
+  </script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const loggedInUser = localStorage.getItem('loggedInUser');
+        const userGreeting = document.getElementById('user-greeting');
+        const loginLink = document.querySelector('a[href="Sign-Up.html"]');
+    
+        if (loggedInUser) {
+            // Đã đăng nhập, hiển thị tên người dùng và liên kết "Đăng Xuất"
+            if (userGreeting) {
+                userGreeting.textContent = `Xin chào, ${loggedInUser}`;
+            }
+    
+            const logoutButton = document.createElement('a');
+            logoutButton.textContent = 'Đăng Xuất';
+            logoutButton.href = '#';
+    
+            // Xử lý sự kiện đăng xuất
+            logoutButton.addEventListener('click', () => {
+                // Xóa thông tin đăng nhập và quay trở lại trang đăng nhập
+                localStorage.removeItem('loggedInUser');
+                window.location.href = 'Sign-Up.html';
+            });
+    
+            // Thay thế liên kết "Đăng Nhập" bằng liên kết "Đăng Xuất"
+            if (loginLink) {
+                loginLink.replaceWith(logoutButton);
+            }
+        }
+    });
+    
+    </script>
+    <footer class="u-align-center u-clearfix u-footer u-grey-80 u-footer" id="sec-47a3">
+      <div class="u-clearfix u-sheet u-sheet-1">
+          <p class="u-align-center u-small-text u-text u-text-variant u-text-1">© Copyright APPLE4CAR - 2023 -
+              CNTT LHU</p>
+      </div>
+  </footer>
+</body>
+
+</html>

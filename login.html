@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/css/login.css">
+    <title>Đăng ký</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="logo">
+            <img src="./assets/images/logo-xe.png" alt="Logo">
+        </div>
+        <div class="form-container">
+            <h1>Đăng ký </h1>
+            <form id="registration-form">
+                <div class="name-inputs">
+                    <input type="text" id="ten" placeholder="Họ tên ">
+
+                </div>
+
+                <input type="tendangnhap" id="tendangnhap" placeholder="tài khoản ">
+                <input type="password" id="matkhau" placeholder=" mật khẩu">
+                <button type="submit">Đăng ký</button>
+                <div class="button">
+                    <a href="./Sign-Up.html">Đăng nhập
+                        <!-- <button class="login-button-rei"></button> -->
+                    </a>
+            </form>
+        </div>
+    </div>
+    <script>
+        document.getElementById("registration-form").addEventListener("submit", function (event) {
+            event.preventDefault();
+
+            // const ho = document.getElementById("ho").value;
+            const ten = document.getElementById("ten").value;
+
+            const tendangnhap = document.getElementById("tendangnhap").value;
+            const matkhau = document.getElementById("matkhau").value;
+
+            const data = {
+
+                HoTen: ten,
+                UserName: tendangnhap,
+                Pass: matkhau
+            };
+
+            fetch("https://apple4car.onrender.com/dangky", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify(data)
+            })
+                .then(response => response.json())
+                .then(responseData => {
+                    if (!responseData.success) {
+                        alert("Đăng ký thành công!");
+                        // Thực hiện hành động sau khi đăng ký thành công
+                    } else {
+                        alert("Đăng ký thất bại. Vui lòng thử lại!");
+                    }
+                })
+                .catch(error => {
+                    console.error("Lỗi:", error);
+                    alert("Đã có lỗi xảy ra. Vui lòng thử lại sau!");
+                });
+        });
+    </script>
+    <script src="./assets/js/cookie.js"></script>
+</body>
+
+</html>
