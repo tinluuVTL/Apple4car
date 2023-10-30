@@ -334,15 +334,18 @@
 
 
   <script>
-    document.addEventListener('DOMContentLoaded', function () {
-      const loggedInUser = localStorage.getItem('loggedInUser');
-      const userGreeting = document.getElementById('user-greeting');
-      const loginLink = document.querySelector('a[href="Sign-Up.html"]');
+    function deleteCookie(cookieName) {
+    document.cookie = `${cookieName}=; expires=Thu, 01 Jan 1970 00:00:00 UTC`;
+  }
+document.addEventListener('DOMContentLoaded', function () {
+    const loggedInUser = localStorage.getItem('loggedInUser');
+    const userGreeting = document.getElementById('user-greeting');
+    const loginLink = document.querySelector('a[href="Sign-Up.html"]');
 
-      if (loggedInUser) {
+    if (loggedInUser) {
         // Đã đăng nhập, hiển thị tên người dùng và liên kết "Đăng Xuất"
         if (userGreeting) {
-          userGreeting.textContent = `Xin chào, ${loggedInUser}`;
+            userGreeting.textContent = `Xin chào, ${loggedInUser}`;
         }
 
         const logoutButton = document.createElement('a');
@@ -351,19 +354,20 @@
 
         // Xử lý sự kiện đăng xuất
         logoutButton.addEventListener('click', () => {
-          // Xóa thông tin đăng nhập và quay trở lại trang đăng nhập
-          localStorage.removeItem('loggedInUser');
-          window.location.href = 'Sign-Up.html';
+            // Xóa thông tin đăng nhập và quay trở lại trang đăng nhập
+            deleteCookie('ss')
+            localStorage.removeItem('loggedInUser');
+            window.location.href = 'Sign-Up.html';
         });
 
         // Thay thế liên kết "Đăng Nhập" bằng liên kết "Đăng Xuất"
         if (loginLink) {
-          loginLink.replaceWith(logoutButton);
+            loginLink.replaceWith(logoutButton);
         }
-      }
-    });
+    }
+});
 
-  </script>
+</script>
   <footer class="u-align-center u-clearfix u-footer u-grey-80 u-footer" id="sec-47a3">
     <div class="u-clearfix u-sheet u-sheet-1">
       <p class="u-align-center u-small-text u-text u-text-variant u-text-1">@B<span

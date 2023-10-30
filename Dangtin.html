@@ -129,13 +129,13 @@
  
  if (sessionID) {
    // Hiển thị session ID
-   sessionInfo.innerHTML = `Session ID: ${sessionID}`;
+   
  
    // Lấy tên tài khoản từ localStorage (nếu đã đăng nhập)
    const loggedInUser = localStorage.getItem('loggedInUser');
  
    if (loggedInUser) {
-     sessionInfo.innerHTML += `<br>Xin chào, ${loggedInUser}!`;
+     
    } else {
      sessionInfo.textContent += "<br>Tên tài khoản không có sẵn.";
    }
@@ -265,8 +265,16 @@
  </div>
  
    <!-- Phần tử để hiển thị dữ liệu từ API -->
-   <h1> Danh Sách Bài Viết Đã Đăng </h1>
-   <div id="table-container"></div>
+ 
+   
+   <div id="table-container">
+    <h1>Danh Sách Bài Viết Đã Đăng</h1>
+    <div class="table-wrapper">
+      <table>
+        <!-- Thêm nội dung của bảng ở đây -->
+      </table>
+    </div>
+  </div>
  
    <script>
      // Đoạn mã JavaScript để lấy dữ liệu từ API và hiển thị nó
@@ -344,6 +352,9 @@
         </div>
     </footer>
 <script>
+    function deleteCookie(cookieName) {
+    document.cookie = `${cookieName}=; expires=Thu, 01 Jan 1970 00:00:00 UTC`;
+  }
 document.addEventListener('DOMContentLoaded', function () {
     const loggedInUser = localStorage.getItem('loggedInUser');
     const userGreeting = document.getElementById('user-greeting');
@@ -362,6 +373,7 @@ document.addEventListener('DOMContentLoaded', function () {
         // Xử lý sự kiện đăng xuất
         logoutButton.addEventListener('click', () => {
             // Xóa thông tin đăng nhập và quay trở lại trang đăng nhập
+            deleteCookie('ss')
             localStorage.removeItem('loggedInUser');
             window.location.href = 'Sign-Up.html';
         });

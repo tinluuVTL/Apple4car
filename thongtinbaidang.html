@@ -26,6 +26,20 @@
     <meta data-intl-tel-input-cdn-path="intlTelInput/">
 
     <title>Thông Tin Xe Chi Tiết</title>
+    <style>
+
+
+#product-details{
+    text-align: center;
+      padding: 20px;
+}
+        #product-image{
+            display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50vh; 
+        }
+    </style>
 </head>
 
 <body>
@@ -157,95 +171,99 @@
         </div>
     </section>
     <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            const productName = document.getElementById("product-name");
-            const productLocation = document.getElementById("product-location");
-            const productPrice = document.getElementById("product-price");
-            const productImage = document.getElementById("product-image");
-            const productDescription = document.getElementById("product-description");
-            const productLicensePlate = document.getElementById("product-license-plate");
-            const productOwner = document.getElementById("product-owner");
+       document.addEventListener("DOMContentLoaded", function () {
+    const productName = document.getElementById("product-name");
+    const productLocation = document.getElementById("product-location");
+    const productPrice = document.getElementById("product-price");
+    const productImage = document.getElementById("product-image");
+    const productDescription = document.getElementById("product-description");
+    const productLicensePlate = document.getElementById("product-license-plate");
+    const productOwner = document.getElementById("product-owner");
 
-            // Lấy mã bài viết đã lưu trong localStorage
-            const selectedMaBai = localStorage.getItem("selectedMaBai");
+    // Lấy mã bài viết đã lưu trong localStorage
+    const selectedMaBai = localStorage.getItem("selectedMaBai");
+    
+    // Lấy dữ liệu từ API
+    fetch(`https://apple4car.onrender.com/lay1baiviet/${selectedMaBai}`)
+        .then(response => response.json())
+        .then(data => {
+            // Hiển thị thông tin chi tiết trên trang
+            productName.textContent = data.TenBaiDang;
+            productLocation.textContent = `Địa Điểm: ${data.DiaDiemCoXe}`;
 
-            // Gọi API để lấy thông tin chi tiết của bài viết dựa trên mã bài viết
-            fetch(`https://apple4car.onrender.com/lay1baiviet/${selectedMaBai}`)
-                .then(response => response.json())
-                .then(data => {
-                    // Hiển thị thông tin chi tiết trên trang
-                    productName.textContent = data.TenBaiDang;
-                    productLocation.textContent = `Địa Điểm: ${data.DiaDiemCoXe}`;
-                    productPrice.textContent = `Giá Thuê: ${data.GiaThue} VNĐ/ngày`;
-                    productImage.src = data.HinhAnh;
-                    productImage.alt = data.TenBaiDang;
-                    productDescription.textContent = `Mô Tả: ${data.NoiDung}`;
-                    productLicensePlate.textContent = `Biển Số: ${data.BienSo}`;
-                    productOwner.textContent = `Họ Tên: ${data.HoTen}`;
+            const giaThue = data.GiaThue;
+            
+            if (!isNaN(giaThue)) {
+                // Định dạng giá thuê sử dụng dấu chấm (".") làm phân cách
+                const giaFormatted = giaThue.toLocaleString('vi-VN');
+                
+                // Hiển thị giá thuê đã định dạng
+                productPrice.textContent = `Giá Thuê: ${giaFormatted} VNĐ/ngày`;
+            }
 
+            // Gán dữ liệu vào phần mô tả và biển số
+            productDescription.textContent = `Mô Tả: ${data.NoiDung}`;
+            productLicensePlate.textContent = `Biển Số: ${data.BienSo}`;
+            productOwner.textContent = `Họ Tên: ${data.HoTen}`;
 
-                    const NgayNhanInput = document.getElementById("NgayNhan");
-                    const NgayTraInput = document.getElementById("NgayTra");
+            // Số lượng tệp ảnh có sẵn trong thư mục
+            const numberOfImages = 10;
 
-                    NgayNhanInput.addEventListener("input", updateTotalPrice);
-                    NgayTraInput.addEventListener("input", updateTotalPrice);
+            // Tạo số ngẫu nhiên từ 1 đến numberOfImages
+            const randomImageNumber = Math.floor(Math.random() * numberOfImages) + 1;
 
-                    function updateTotalPrice() {
-                        const ngayNhan = new Date(NgayNhanInput.value);
-                        const ngayTra = new Date(NgayTraInput.value);
+            // Kết hợp số ngẫu nhiên với tên tệp ảnh cố định
+            const imageFileName = `xe${randomImageNumber}.jpg`;
 
-                        if (!isNaN(ngayNhan) && !isNaN(ngayTra) && ngayTra >= ngayNhan) {
-                            const giaThue = parseFloat(data.GiaThue);
-                            const soNgayThue = Math.ceil((ngayTra - ngayNhan) / (1000 * 60 * 60 * 24));
+            // Tạo đường dẫn đầy đủ đến tệp ảnh
+            const fullImagePath = `./assets/images/imagesXe/${imageFileName}`;
 
-                            if (!isNaN(giaThue) && !isNaN(soNgayThue)) {
-                                const totalPrice = giaThue * soNgayThue;
-                                productPrice.textContent = `Tổng Giá Thuê: ${totalPrice.toLocaleString('vi-VN')} VNĐ`;
-                            }
-
-                        }
-                    }
-                })
-                .catch(error => {
-                    console.error('Lỗi:', error);
-                });
+            productImage.src = fullImagePath;
+            productImage.alt = data.TenBaiDang;
+        })
+        .catch(error => {
+            console.error('Lỗi:', error);
         });
-    </script>
-    <!-- Xử lí form -->
-    <script>
+});
+
+
 
     </script>
 
     <!-- xử lí đăng nhập -->
     <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            const loggedInUser = localStorage.getItem('loggedInUser');
-            const userGreeting = document.getElementById('user-greeting');
-            const loginLink = document.querySelector('a[href="Sign-Up.html"]');
-
-            if (loggedInUser) {
-                // Đã đăng nhập, hiển thị tên người dùng và liên kết "Đăng Xuất"
-                if (userGreeting) {
-                    userGreeting.textContent = `Xin chào, ${loggedInUser}`;
-                }
-
-                const logoutButton = document.createElement('a');
-                logoutButton.textContent = 'Đăng Xuất';
-                logoutButton.href = '#';
-
-                // Xử lý sự kiện đăng xuất
-                logoutButton.addEventListener('click', () => {
-                    // Xóa thông tin đăng nhập và quay trở lại trang đăng nhập
-                    localStorage.removeItem('loggedInUser');
-                    window.location.href = 'Sign-Up.html';
-                });
-
-                // Thay thế liên kết "Đăng Nhập" bằng liên kết "Đăng Xuất"
-                if (loginLink) {
-                    loginLink.replaceWith(logoutButton);
-                }
+            function deleteCookie(cookieName) {
+                document.cookie = `${cookieName}=; expires=Thu, 01 Jan 1970 00:00:00 UTC`;
             }
-        });
+            document.addEventListener('DOMContentLoaded', function () {
+                const loggedInUser = localStorage.getItem('loggedInUser');
+                const userGreeting = document.getElementById('user-greeting');
+                const loginLink = document.querySelector('a[href="Sign-Up.html"]');
+
+                if (loggedInUser) {
+                    // Đã đăng nhập, hiển thị tên người dùng và liên kết "Đăng Xuất"
+                    if (userGreeting) {
+                        userGreeting.textContent = `Xin chào, ${loggedInUser}`;
+                    }
+
+                    const logoutButton = document.createElement('a');
+                    logoutButton.textContent = 'Đăng Xuất';
+                    logoutButton.href = '#';
+
+                    // Xử lý sự kiện đăng xuất
+                    logoutButton.addEventListener('click', () => {
+                        // Xóa thông tin đăng nhập và quay trở lại trang đăng nhập
+                        deleteCookie('ss')
+                        localStorage.removeItem('loggedInUser');
+                        window.location.href = 'Sign-Up.html';
+                    });
+
+                    // Thay thế liên kết "Đăng Nhập" bằng liên kết "Đăng Xuất"
+                    if (loginLink) {
+                        loginLink.replaceWith(logoutButton);
+                    }
+                }
+            });
 
     </script>
     <footer class="u-align-center u-clearfix u-footer u-grey-80 u-footer" id="sec-47a3">

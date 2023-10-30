@@ -101,3 +101,54 @@ button:hover {
   color: #0077FF; 
   margin-right: 20px;
 }
+
+  #table-container {
+    text-align: center;
+    padding: 20px;
+  }
+
+  h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+
+  .table-wrapper {
+    display: flex;
+    justify-content: center;
+  }
+
+  table {
+    border-collapse: collapse;
+    width: 100%;
+  }
+
+  table, th, td {
+    border: 1px solid #ddd;
+  }
+
+  th, td {
+    padding: 10px;
+    text-align: left;
+  }
+
+  th {
+    background-color: #f2f2f2;
+  }
+
+  tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+
+  tr:nth-child(odd) {
+    background-color: #ffffff;
+  }
+
+  th {
+    background-color: #51d6ff;
+    font-weight: bold; /* Đậm chữ */
+    font-size: 16px; /* Kích thước chữ */
+    padding: 10px;
+    text-align: center;
+    text-transform: uppercase; /* Chuyển thành chữ in hoa */
+    color: #333; /* Màu chữ */
+  }

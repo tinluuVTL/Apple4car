@@ -122,7 +122,7 @@
     </div>
     <div class="login-input">
       <div class="login-logo">
-        <img src="./assets/image/logo.png" alt="" />
+        <img src="./assets/images/logo-xe.png" alt="" />
       </div>
       <h2>Đăng nhập</h2>
       <form id="login-form">
@@ -143,6 +143,13 @@
     // Lấy đối tượng form và các trường dữ liệu
     const form = document.getElementById('login-form');
 
+    function setCookie(cookieName, cookieValue, expirationDays) {
+    const expirationDate = new Date();
+    expirationDate.setDate(expirationDate.getDate() + expirationDays);
+    const expires = `expires=${expirationDate.toUTCString()}`;
+    document.cookie = `${cookieName}=${cookieValue}; ${expires}`;
+  }
+  
     // Lắng nghe sự kiện submit của form đăng nhập
     form.addEventListener('submit', async (e) => {
       e.preventDefault(); // Ngăn chặn hành động mặc định của form
@@ -165,9 +172,14 @@
       if (data.success == true) {
         localStorage.setItem('loggedInUser', UserName);
         const oneDay = 3 * 24 * 60 * 60 * 1000; // Số miligiây trong 1 ngày
-        document.cookie = `loggedInUserName=${data.UserName}; expires=${new Date(oneDay + Date.now()).toUTCString()}; path=/`;
+        setCookie('ss', `${data.cookieValue}`, 3);
         // Nếu dữ liệu trả về có UserName (điều này chỉ ra tài khoản đúng), chuyển hướng đến trang chủ
-        window.location.href = './index.html';
+        if(data.quyen =='admin     '){
+          window.location.href = 'https://ap4car.000webhostapp.com/';
+        }else{
+          window.location.href = './index.html';
+        }
+        
       } else {
         // Nếu không có dữ liệu hoặc tài khoản không đúng, hiển thị thông báo lỗi
         alert(data.message);
